@@ -47,6 +47,7 @@ for my $n (0..359) {
 			
 			for my $sept (0..12) {
 				next if ($sept == $tp);
+				next if ($sept ~~ $chords->{$ch});
 				my $sum = calc_a($tp, @{$chords->{$ch}}, $sept);
 				push @buff, {
 					a  => $sum,
