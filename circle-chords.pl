@@ -5,12 +5,14 @@ use warnings;
 use 5.022;
 
 my $chords = {
-	maj  => [0, 4, 7, 12],
-	min  => [0, 3, 7, 12],
-	maj7 => [0, 4, 7, 10],
-	min7 => [0, 3, 7, 10],
-	sus  => [0, 5, 7, 12],
-	sus2 => [0, 2, 7, 12],
+	maj    => [0, 4, 7, 12],
+	min    => [0, 3, 7, 12],
+	maj7   => [0, 4, 7, 10],
+	min7   => [0, 3, 7, 10],
+	sus    => [0, 5, 7, 12],
+	sus2   => [0, 2, 7, 12],
+	'maj+' => [0, 4, 7, 11],
+	jazz   => [0, 2, 5, 11],
 };
 
 my @notes = qw(C C# D D# E F F# G G# A A# B C);
@@ -63,7 +65,7 @@ for my $n (0..359) {
 	
 	@buff = sort {abs($a->{a} - $n) <=> abs($b->{a} - $n)} @buff;
 	say "$n:";
-	for (0..10) {
+	for (0..20) {
 		my $b = $buff[$_];
 		say "\t" . $notes[$b->{tp}] . (exists ($b->{sept}) ? '/' . $notes[$b->{sept}]  : ''). ': ' . $b->{ch} . ' dt='.abs($b->{a} - $n);
 	}
