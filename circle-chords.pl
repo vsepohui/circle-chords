@@ -9,6 +9,8 @@ my $chords = {
 	min  => [0, 3, 7, 12],
 	maj7 => [0, 4, 7, 10],
 	min7 => [0, 3, 7, 10],
+	sus  => [0, 5, 7, 12],
+	sus2 => [0, 2, 7, 12],
 };
 
 my @notes = qw(C C# D D# E F F# G G# A A# B C);
